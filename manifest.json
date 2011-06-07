@@ -1,0 +1,26 @@
+﻿{
+  "name" : "豆瓣电台",
+  "version" : "1.0",
+  "description" : "Shows a page action for HTML pages containing the word 'sandwich'",
+  "background_page" : "background.html",
+  "page_action" :
+  {
+    "default_icon" : "sandwich-19.png",
+    "default_title" : "豆瓣电台增强版"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://www.douban.com/*"
+      ],
+      "js" : ["contentscript.js"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ],
+    "permissions": [
+        "tabs",
+		"notifications",
+		"http://*/*"
+    ]
+}
