@@ -1,26 +1,23 @@
 ﻿{
-  "name" : "豆瓣电台",
-  "version" : "1.0",
-  "description" : "Shows a page action for HTML pages containing the word 'sandwich'",
-  "background_page" : "background.html",
+  "name" : "反豆瓣的东西",
+  "version" : "0.1",
+  "description" : "干掉所有的豆瓣东西",
   "page_action" :
   {
     "default_icon" : "sandwich-19.png",
-    "default_title" : "豆瓣电台增强版"
+    "default_title" : "反豆瓣的东西"
   },
   "content_scripts" : [
     {
       "matches" : [
         "http://www.douban.com/*"
       ],
-      "js" : ["contentscript.js"],
+      "js" : ["jquery-1.7.2.min.js","contentscript.js"],
       "run_at" : "document_end",
       "all_frames" : false
     }
   ],
     "permissions": [
-        "tabs",
-		"notifications",
-		"http://*/*"
+        "tabs","http://www.douban.com/*"
     ]
 }
